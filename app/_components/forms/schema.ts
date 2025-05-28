@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const schema = z.object({
+export const formschema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
@@ -16,4 +16,16 @@ const schema = z.object({
   check: z.boolean().default(false).optional(),
 });
 
-export default schema;
+export const mortgageFormschema = z.object({
+  price: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+
+  years: z.string().min(8, {
+    message: "Password must be at least 8 characters.",
+  }),
+
+  rate: z.string().email({ message: "Invalid email address." }),
+
+  type: z.string().optional(),
+});

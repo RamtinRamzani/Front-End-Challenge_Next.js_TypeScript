@@ -15,16 +15,16 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import formSchema from "./schema";
+import { formschema } from "./schema";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = z.infer<typeof formschema>;
 
 export default function ProfileForm() {
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formschema),
     defaultValues: {
       username: "",
       password: "",

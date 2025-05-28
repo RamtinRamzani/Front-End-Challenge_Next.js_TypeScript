@@ -19,6 +19,9 @@
   --color-primary-800: oklch(0.3 0.03 254.5);
   --color-primary-900: oklch(0.2 0.02 254);
   --color-primary-950: oklch(0.15 0.01 253.5);
+
+  /* - Lime: hsl(61, 70%, 52%)
+- Red: hsl(4, 69%, 50%) */
 }
 
 /* .loading {
