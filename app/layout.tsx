@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import "./_styles/globals.css";
 import Header from "./_components/Header";
+import { Toaster } from "@/components/ui/sonner";
 
 // const josefin = Josefin_Sans({
 //   subsets: ["latin"],
@@ -28,7 +29,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </header>
 
         <main className="flex-1">
-          <div className="w-full mx-auto">{children}</div>
+          <div className="w-full mx-auto">
+            {children}
+            <Toaster />
+          </div>
         </main>
 
         <footer className="relative z-1 text-white text-2xl text-center bg-gray-900">

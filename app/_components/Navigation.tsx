@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@radix-ui/react-navigation-menu";
+import Link from "next/link";
 import React from "react";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -21,6 +22,16 @@ const components: { title: string; href: string; description: string }[] = [
     href: "/projects/jonior/faq-accordion",
     description: "Faq Accordion.",
   },
+  {
+    title: "Age Calculator",
+    href: "/projects/jonior/age-calculator",
+    description: "Calculate your age.",
+  },
+  {
+    title: "Contact form",
+    href: "/projects/jonior/contact-form",
+    description: "Reausable contact form.",
+  },
 ];
 
 function Navigation() {
@@ -32,7 +43,7 @@ function Navigation() {
             Jonior
           </NavigationMenuTrigger>
           <NavigationMenuContent className="absolute left-0 top-full mt-1 w-[var(--radix-navigation-menu-viewport-width)]">
-            <ul className="grid gap-3 p-4 w-[400px] bg-primary-900 border rounded-md shadow-lg">
+            <ul className="grid gap-3 p-4 w-[400px] bg-primary-900 rounded-md shadow-lg">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -55,13 +66,14 @@ export default Navigation;
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"a"> & { href: string }
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          href={href}
           className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 ${
             className || ""
           }`}
@@ -71,7 +83,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-gray-400">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );

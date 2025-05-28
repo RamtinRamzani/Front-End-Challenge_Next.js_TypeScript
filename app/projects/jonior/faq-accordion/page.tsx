@@ -41,7 +41,7 @@ function Page() {
         alt="Background Pattern"
       />
 
-      <div className="relative bg-white p-6 sm:p-8 gap-4 w-full max-w-3xl rounded-xl z-10 flex flex-col shadow-2xl">
+      <div className="relative bg-white p-6 sm:p-8 gap-4 w-full max-w-3xl rounded-xl flex flex-col shadow-2xl">
         <div className="flex items-center gap-4">
           <Image
             src="/images/jonior/icon-star.svg"

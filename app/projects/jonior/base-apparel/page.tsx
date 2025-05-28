@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "Base Apparel",
+};
+
 function Page() {
   return (
     <section className="flex flex-col-reverse md:flex-row mx-auto gap-[clamp(1rem,4vw,4rem)] bg-primary-100 min-h-screen">
