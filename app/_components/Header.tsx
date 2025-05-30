@@ -1,6 +1,6 @@
 import Account from "./Account";
 import Logo from "./Logo";
-import Navigation from "./Navigation";
+import Navigation from "./nav/Navigation";
 
 function Header() {
   return (

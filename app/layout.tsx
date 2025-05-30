@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </main>
 
-        <footer className="relative z-1 text-white text-2xl text-center bg-gray-900">
+        <footer className="relative z-1 text-white text-2xl text-center bg-gray-800">
           Footer
         </footer>
       </body>
