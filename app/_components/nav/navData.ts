@@ -28,4 +28,9 @@ export const joniorData: {
     href: "/projects/jonior/repayment-calculator",
     description: "Calculate you repayment Bank.",
   },
+  {
+    title: "Product List",
+    href: "/projects/jonior/product-list",
+    description: "A simple Product list with add or delete shop.",
+  },
 ];
