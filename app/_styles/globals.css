@@ -49,6 +49,9 @@
 
 @layer components {
   .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 3.2rem auto 1.6rem;
     width: 60px;
     aspect-ratio: 1;
@@ -56,6 +59,10 @@
     border: 8px solid theme("colors.primary.900");
     border-right-color: theme("colors.primary.200");
     animation: rotate 1s infinite linear;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
   }
 
   .spinner-mini {
