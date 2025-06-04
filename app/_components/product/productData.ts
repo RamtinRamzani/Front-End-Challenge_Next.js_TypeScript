@@ -1,0 +1,51 @@
+export const productData = [
+  {
+    id: 1,
+    title: "cake",
+    detail: "A piece of cake",
+    price: 100,
+    img: "/images/jonior/product-list/image-baklava-desktop.jpg",
+  },
+  {
+    id: 2,
+    title: "test",
+    detail: "Waffle with Berries",
+    price: 200.55,
+    img: "/images/jonior/product-list/image-brownie-desktop.jpg",
+  },
+  {
+    id: 3,
+    title: "zert",
+    detail: "Waffle with Berries",
+    price: 300.0,
+    img: "/images/jonior/product-list/image-cake-desktop.jpg",
+  },
+  {
+    id: 4,
+    title: "chert",
+    detail: "Waffle with Berries",
+    price: 400.0,
+    img: "/images/jonior/product-list/image-creme-brulee-desktop.jpg",
+  },
+  {
+    id: 5,
+    title: "pert",
+    detail: "Waffle with Berries",
+    price: 550.5,
+    img: "/images/jonior/product-list/image-creme-brulee-desktop.jpg",
+  },
+  {
+    id: 6,
+    title: "chert",
+    detail: "Waffle with Berries",
+    price: 650.2,
+    img: "/images/jonior/product-list/image-macaron-desktop.jpg",
+  },
+  {
+    id: 7,
+    title: "beauty",
+    detail: "Waffle with Berries",
+    price: 650.2,
+    img: "/images/jonior/product-list/image-panna-cotta-desktop.jpg",
+  },
+];
