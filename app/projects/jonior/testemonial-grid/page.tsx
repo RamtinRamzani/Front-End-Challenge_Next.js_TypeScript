@@ -75,7 +75,7 @@ function Page() {
   };
 
   return (
-    <section className="container mx-auto bg-primary-700 text-white border grid md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-x-4 gap-y-8 p-6">
+    <section className="container mx-auto text-white my-10 grid md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-x-4 gap-y-8 p-6">
       {boxes.map((box) => (
         <div key={box.id} className={box.className}>
           {assignedTexts[box.id] && (
