@@ -33,4 +33,9 @@ export const joniorData: {
     href: "/projects/jonior/product-list",
     description: "A simple Product list with add or delete shop.",
   },
+  {
+    title: "Testemonial Grid",
+    href: "/projects/jonior/testemonial-grid",
+    description: "Testemonial Grid Section with Cards.",
+  },
 ];
