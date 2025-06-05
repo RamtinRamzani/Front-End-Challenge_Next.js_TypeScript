@@ -1,24 +1,32 @@
-"use client";
-
 import Image from "next/image";
-
 import addToCartIcon from "@/../public/images/jonior/product-list/icon-add-to-cart.svg";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useProduct } from "@/_context/ProductListProvider";
 
-function ProductCart({ data }) {
-  const [quantity, setQuantity] = useState(0);
+interface Product {
+  id: number;
+  title: string;
+  detail: string;
+  price: number;
+  img: string;
+}
+
+function ProductCart({ data }: { data: Product }) {
+  const { cart, addToCart, updateQuantity } = useProduct();
+
+  const cartItem = cart.find((item) => item.id === data.id);
+  const quantity = cartItem ? cartItem.quantity || 0 : 0;
 
   function handleAddToCart() {
-    setQuantity(1);
+    addToCart(data);
   }
 
   function handleDecrease() {
-    setQuantity((prev) => (prev <= 1 ? 0 : prev - 1));
+    updateQuantity(data.id, quantity - 1);
   }
 
   function handleIncrease() {
-    setQuantity((prev) => prev + 1);
+    updateQuantity(data.id, quantity + 1);
   }
 
   return (
@@ -28,7 +36,7 @@ function ProductCart({ data }) {
           fill
           src={data.img}
           className="object-cover rounded-md shadow-md"
-          alt="Waffle with Berries"
+          alt={data.detail}
         />
         <div className="flex justify-center">
           {quantity > 0 ? (
@@ -77,7 +85,7 @@ function ProductCart({ data }) {
         <p className="text-primary-50 font-semibold capitalize">
           {data.detail}
         </p>
-        <span className="text-red-600">{data.price}</span>
+        <span className="text-red-600">${data.price.toFixed(2)}</span>
       </div>
     </div>
   );
