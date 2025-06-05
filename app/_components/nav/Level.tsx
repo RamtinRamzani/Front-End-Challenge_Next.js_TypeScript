@@ -24,7 +24,7 @@ function Level({ level, components }: LevelProps) {
           {level}
         </NavigationMenuTrigger>
         <NavigationMenuContent className="absolute left-0 top-full mt-1 w-[var(--radix-navigation-menu-viewport-width)]">
-          <ul className="grid grid-cols-2 gap-3 p-4 w-[600px] bg-primary-900 rounded-md shadow-lg">
+          <ul className="grid md:grid-cols-2 grid-cols-1 md:gap-3 p-[clamp(4px,2vw,16px)]  md:w-[600px] w-52 bg-primary-900 rounded-md shadow-lg">
             {components.map((component) => (
               <ListItem
                 key={component.title}

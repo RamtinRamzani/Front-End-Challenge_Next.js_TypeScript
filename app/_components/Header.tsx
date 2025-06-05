@@ -1,14 +1,14 @@
-import Account from "./Account";
+// import Account from "./Account";
 import Logo from "./Logo";
 import Navigation from "./nav/Navigation";
 
 function Header() {
   return (
-    <header className="relative z-10 text-white py-2">
-      <div className="flex items-center justify-between gap-10 mx-auto max-w-7xl h-16">
-        <Logo />
+    <header className="relative z-10 text-white lg:py-2 py-1 px-2">
+      <div className="flex md:flex-row-reverse items-center justify-between lg:gap-10 mx-auto max-w-7xl lg:h-16 h-12">
         <Navigation />
-        <Account />
+        <Logo />
+        {/* <Account /> */}
       </div>
     </header>
   );

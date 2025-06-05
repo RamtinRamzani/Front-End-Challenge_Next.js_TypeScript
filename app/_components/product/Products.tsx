@@ -1,5 +1,5 @@
 import ProductCart from "./ProductCart";
-import { productData } from "./productData";
+import { productData } from "../../_data/productData";
 
 function Products() {
   return (
@@ -7,7 +7,7 @@ function Products() {
       <h2 className="text-3xl font-bold text-primary-50 p-4 mb-6 rounded">
         Desserts
       </h2>
-      <div className="grid grid-cols-3 gap-x-6 gap-y-12">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-12">
         {/* Array.from({ length: 5 }).map((_, i) */}
         {productData.map((item) => (
           <div key={item.id} className="h-80 rounded-md">
