@@ -1,5 +1,4 @@
 import Image from "next/image";
-import pic from "@/../public/images/jonior/testemonial-grid/image-daniel.jpg";
 
 interface TestemonialItemProps {
   title: string;
