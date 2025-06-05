@@ -1,8 +1,17 @@
+"use client";
+
+import Order from "@/_components/product/Order";
+import Products from "@/_components/product/Products";
+import { ProductListProvider } from "@/_context/ProductListProvider";
+
 function Page() {
   return (
-    <div className="bg-white h-screen container mx-auto">
-      <h2 className="text-3xl font-bold ">Desserts</h2>
-    </div>
+    <ProductListProvider>
+      <section className="h-screen container mx-auto grid grid-cols-6 gap-x-6 my-10 px-10">
+        <Products />
+        <Order />
+      </section>
+    </ProductListProvider>
   );
 }
 
