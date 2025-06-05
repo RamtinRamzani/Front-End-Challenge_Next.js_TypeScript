@@ -15,7 +15,7 @@ function ShowResultRepayment({
   const hasResults = monthlyRepayment > 0 && totalRepayment > 0;
 
   return (
-    <div className="w-full relative bg-primary-800 rounded-bl-[50px] px-6 py-12 rounded-r-md">
+    <div className="w-full relative bg-primary-800 rounded-bl-[50px] px-6 py-12 sm:rounded-r-md">
       {hasResults ? (
         <>
           <h2 className="text-xl font-semibold">Your results</h2>

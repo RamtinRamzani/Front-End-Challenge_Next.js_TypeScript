@@ -47,16 +47,16 @@ export default function ProfileForm() {
       },
       duration: 5000,
       style: {
-        background: "#4a5568", // example background color
+        background: "#4a5568",
         color: "#ffffff",
-        border: "1px solid #2d3748", // example border color
+        border: "1px solid #2d3748",
       },
       icon: "✅",
     });
   }
 
   return (
-    <div className="bg-gray-800 max-w-xl mx-auto flex flex-col items-center py-8 rounded-lg shadow-md mt-10">
+    <div className="bg-gray-800 max-w-xl mx-auto flex flex-col items-center py-8 rounded-lg shadow-md mt-[clamp(10px,2vw,32px)] max-sm:max-w-xs">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="grid grid-cols-2 gap-x-4 gap-y-6">

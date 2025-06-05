@@ -14,7 +14,7 @@ function Page() {
   }
 
   return (
-    <div className="max-w-3xl relative mx-auto mt-36 bg-primary-700 rounded-md shadow-md flex justify-between gap-2 text-gray-50">
+    <div className="sm:max-w-3xl max-sm:w-[clamp(300px,2vw,700px)] relative mx-auto mt-[clamp(10px,4vw,144px)] sm:border border-primary-700 rounded-md shadow-md flex max-sm:flex-col justify-between sm:gap-2 text-gray-50 mb-10">
       <RepaymentForm onCalculate={handleCalculate} />
 
       <ShowResultRepayment

@@ -80,7 +80,7 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
     );
     toast("You submitted the following amount:", {
       description: (
-        <pre className="text-sm whitespace-pre-wrap">
+        <pre className="text-[clamp(12px,2vw,14px)] whitespace-pre-wrap">
           {`£${numericAmount.toLocaleString()}`}
         </pre>
       ),
@@ -102,9 +102,11 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
   };
 
   return (
-    <div className="w-full px-6 pt-6">
-      <div className="flex justify-between">
-        <h2 className="font-semibold text-xl">Morgage Calculate</h2>
+    <div className="w-full px-[clamp(8px,4vw,24px)] pt-[clamp(8px,4vw,24px)] border border-primary-700">
+      <div className="flex justify-between items-center">
+        <h2 className="font-semibold text-[clamp(16px,3vw,20px)]">
+          Mortgage Calculator
+        </h2>
         <Button
           variant="link"
           onClick={() => {
@@ -116,25 +118,30 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
             });
             onCalculate(0, 0);
           }}
-          className="text-blue-500 underline underline-offset-4 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+          className="text-[clamp(12px,2vw,14px)] text-blue-500 underline underline-offset-4 hover:text-blue-600 transition-colors duration-300"
         >
           Clear All
         </Button>
       </div>
 
-      <div className="max-w-md mx-auto my-10">
+      <div className="w-full max-w-[min(90vw,600px)] mx-auto my-[clamp(16px,3vw,32px)]">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-2 gap-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-[clamp(16px,2vw,24px)]"
+          >
+            <div className="grid grid-cols-1 gap-[clamp(12px,2vw,16px)] sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="amount"
                 render={({ field }) => (
-                  <FormItem className="col-span-2">
-                    <FormLabel>Mortgage Amount</FormLabel>
+                  <FormItem className="col-span-1 sm:col-span-2">
+                    <FormLabel className="text-[clamp(12px,2vw,14px)]">
+                      Mortgage Amount
+                    </FormLabel>
                     <FormControl>
                       <div className="relative">
-                        <span className="flex justify-center items-center absolute left-0 top-1/2 transform -translate-y-1/2 px-2 text-primary-50  h-full bg-primary-600 rounded-l-md">
+                        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 px-[clamp(6px,1.5vw,8px)] text-[clamp(12px,2vw,14px)] text-primary-50 bg-primary-600 rounded-l-md h-full flex items-center">
                           $
                         </span>
                         <Input
@@ -142,11 +149,11 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
                           value={formatCurrency(field.value?.toString() || "")}
                           onChange={(e) => field.onChange(e.target.value)}
                           placeholder="Enter amount"
-                          className="pl-10 rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
+                          className="pl-[clamp(28px,6vw,36px)] text-[clamp(12px,2vw,14px)] rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
                         />
                       </div>
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[clamp(10px,1.5vw,12px)]" />
                   </FormItem>
                 )}
               />
@@ -155,22 +162,24 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
                 control={form.control}
                 name="term"
                 render={({ field }) => (
-                  <FormItem className="flex-1">
-                    <FormLabel>Mortgage Term</FormLabel>
+                  <FormItem>
+                    <FormLabel className="text-[clamp(12px,2vw,14px)]">
+                      Mortgage Term
+                    </FormLabel>
                     <FormControl>
                       <div className="relative">
                         <Input
                           {...field}
                           onChange={(e) => field.onChange(e.target.value)}
                           placeholder="Years"
-                          className="rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
+                          className="pr-[clamp(48px,10vw,60px)] text-[clamp(12px,2vw,14px)] rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
                         />
-                        <span className="flex justify-center items-center absolute right-0 top-1/2 transform -translate-y-1/2 px-2 text-primary-50  h-full bg-primary-600 rounded-r-md">
+                        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 px-[clamp(6px,1.5vw,8px)] text-[clamp(12px,2vw,14px)] text-primary-50 bg-primary-600 rounded-r-md h-full flex items-center">
                           years
                         </span>
                       </div>
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[clamp(10px,1.5vw,12px)]" />
                   </FormItem>
                 )}
               />
@@ -180,20 +189,22 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
                 name="rate"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Interest Rate</FormLabel>
+                    <FormLabel className="text-[clamp(12px,2vw,14px)]">
+                      Interest Rate
+                    </FormLabel>
                     <FormControl>
                       <div className="relative">
                         <Input
                           {...field}
                           placeholder="Rate"
-                          className="rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
+                          className="pr-[clamp(28px,6vw,36px)] text-[clamp(12px,2vw,14px)] rounded-md border border-gray-500 focus:border-blue-500 focus:ring-0"
                         />
-                        <span className="flex justify-center items-center absolute right-0 top-1/2 transform -translate-y-1/2 px-2 text-primary-50  h-full border-r border-primary-400 bg-primary-600 rounded-r-md">
+                        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 px-[clamp(6px,1.5vw,8px)] text-[clamp(12px,2vw,14px)] text-primary-50 bg-primary-600 rounded-r-md h-full flex items-center">
                           %
                         </span>
                       </div>
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[clamp(10px,1.5vw,12px)]" />
                   </FormItem>
                 )}
               />
@@ -202,19 +213,21 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
                 control={form.control}
                 name="type"
                 render={({ field }) => (
-                  <FormItem className="col-span-2">
-                    <FormLabel className="mb-2">Mortgage Type</FormLabel>
+                  <FormItem className="col-span-1 sm:col-span-2">
+                    <FormLabel className="text-[clamp(12px,2vw,14px)] mb-2">
+                      Mortgage Type
+                    </FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
                         defaultValue={field.value}
-                        className="flex flex-col space-y-2"
+                        className="flex flex-col gap-[clamp(8px,1.5vw,12px)]"
                       >
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="repayment" />
                           </FormControl>
-                          <FormLabel className="font-normal">
+                          <FormLabel className="font-normal text-[clamp(12px,2vw,14px)]">
                             Repayment
                           </FormLabel>
                         </FormItem>
@@ -222,23 +235,29 @@ function RepaymentForm({ onCalculate }: RepaymentFormProps) {
                           <FormControl>
                             <RadioGroupItem value="interest-only" />
                           </FormControl>
-                          <FormLabel className="font-normal">
+                          <FormLabel className="font-normal text-[clamp(12px,2vw,14px)]">
                             Interest Only
                           </FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[clamp(10px,1.5vw,12px)]" />
                   </FormItem>
                 )}
               />
             </div>
 
             <Button
-              className="flex gap-2 bg-amber-500 text-primary-600 font-semibold cursor-pointer hover:bg-amber-600 hover:text-primary-700 transition-colors duration-300 px-4 py-2 rounded-2xl mt-10"
+              className="flex items-center gap-[clamp(6px,1vw,8px)] bg-amber-500 text-primary-600 font-semibold hover:bg-amber-600 hover:text-primary-700 transition-colors duration-300 px-[clamp(12px,3vw,16px)] py-[clamp(6px,1.5vw,8px)] rounded-2xl mt-[clamp(16px,3vw,24px)] text-[clamp(12px,2vw,14px)]"
               type="submit"
             >
-              <Image src={bg} width={16} height={16} alt="calculate img" />
+              <Image
+                src={bg}
+                width={16}
+                height={16}
+                alt="calculate img"
+                className="w-[clamp(12px,2vw,16px)] h-[clamp(12px,2vw,16px)]"
+              />
               <span>Calculate Repayments</span>
             </Button>
           </form>

@@ -7,7 +7,7 @@ import { ProductListProvider } from "@/_context/ProductListProvider";
 function Page() {
   return (
     <ProductListProvider>
-      <section className="h-screen container mx-auto grid grid-cols-6 gap-x-6 my-10 px-10">
+      <section className="container mx-auto grid grid-cols-6 gap-x-[clamp(4px,2vw,24px)] my-10 px-10">
         <Products />
         <Order />
       </section>
